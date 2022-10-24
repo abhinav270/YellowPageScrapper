@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     Adf['Category'] = choice()
 
-    Adf['Category_Count_State'] = Adf['Category'][i]+'$'+Adf['County'][i]+' '+Adf['State'][i]
+    Adf['Category_Count_State'] = Adf['Category']+'$'+Adf['County']+' '+Adf['State']
 
     list_scrapping_data = Adf['Category_Count_State'].to_list()
 
