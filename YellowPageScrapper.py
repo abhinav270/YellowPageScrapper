@@ -118,6 +118,8 @@ def main(item):
     
     keyword = item.split('$')[0]
     place = item.split('$')[1]
+    
+    
 
     if os.path.exists(os.getcwd()+'/output')==False:
         os.mkdir(os.getcwd()+'/output')
@@ -129,12 +131,12 @@ def main(item):
 
     else:
         print(f'Error while building Output of {place} Folder')
-    
+    output_path = os.getcwd()+'/output//'+place
     scraped_data = parse_listing(keyword, place,25) #Defalt 25 Page numbers
 
     if scraped_data:
         print("Writing scraped data to %s-%s-yellowpages-scraped-data.csv" % (keyword, place))
-        with open(os.getcwd()+'/%s-%s-yellowpages-scraped-data.csv' % (keyword, place), 'wb') as csvfile:
+        with open(output_path +'/%s-%s-yellowpages-scraped-data.csv' % (keyword, place), 'wb') as csvfile:
             fieldnames = ['rank', 'business_name', 'telephone', 'business_page', 'category', 'website', 'rating',
                           'street', 'locality', 'region', 'zipcode', 'listing_url']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
