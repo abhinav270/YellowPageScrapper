@@ -115,9 +115,21 @@ def parse_listing(keyword, place,page_no):
 from os import getcwd
 path = getcwd()
 def main(item):
+    
     keyword = item.split('$')[0]
     place = item.split('$')[1]
 
+    if os.path.exists(os.getcwd()+'/output')==False:
+        os.mkdir(os.getcwd()+'/output')
+    else:
+        print('Error while building Output Folder')
+
+    if os.path.exists(os.getcwd()+'/output//'+place)==False:
+        os.mkdir(os.getcwd()+'/output//'+place)
+
+    else:
+        print(f'Error while building Output of {place} Folder')
+    
     scraped_data = parse_listing(keyword, place,25) #Defalt 25 Page numbers
 
     if scraped_data:
