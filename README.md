@@ -1,7 +1,7 @@
 
 # Yellow Page Scrapper 
 
-Python scrapper which scrape particular category from the american county.
+Python scrapper which scrape particular category from the american county. using multiprocessing to make our scapping much faster.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ Python scrapper which scrape particular category from the american county.
 - pip install -r requirements.txt
     
     OR
-    
+
 - !pip install lxml
 - !pip install unicodecsv
 - !pip install pandas
