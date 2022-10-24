@@ -153,12 +153,12 @@ def choice():
         5:'Enter your own category',
     }
 
-    print(choice)
+    print('Options \n',choice)
 
-    ch = int(input("Enter your option as number"))
+    ch = int(input("Enter your option as number : "))
 
     if(ch==5):
-        category = str(input("Enter your category"))
+        category = str(input("Enter your category : "))
         return category
     else:
         return choice[ch]
