@@ -4,6 +4,7 @@ from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 import pandas as pd
 import unicodecsv as csv
+import os
 
 
 def parse_listing(keyword, place,page_no):
@@ -121,7 +122,7 @@ def main(item):
 
     if scraped_data:
         print("Writing scraped data to %s-%s-yellowpages-scraped-data.csv" % (keyword, place))
-        with open('/content/drive/MyDrive/OUTPUT/School/%s-%s-yellowpages-scraped-data.csv' % (keyword, place), 'wb') as csvfile:
+        with open(os.getcwd()+'/%s-%s-yellowpages-scraped-data.csv' % (keyword, place), 'wb') as csvfile:
             fieldnames = ['rank', 'business_name', 'telephone', 'business_page', 'category', 'website', 'rating',
                           'street', 'locality', 'region', 'zipcode', 'listing_url']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
